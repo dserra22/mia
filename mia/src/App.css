@@ -36,6 +36,12 @@ body {
   }
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 :root {
   --primary: #d21312;
   --secondary: #ed2b2a;
@@ -49,9 +55,20 @@ body {
 }
 
 .Card {
-  /* padding: 2rem; */
+  padding: 2rem;
   background-color: var(--secondary);
-  font-size: 2.8rem;
+  position: absolute;
+  height: 100%;
+  font-size: 4rem;
+  width: 100%;
+  transition: all 0.2s;
+  font-size: 4.4rem;
+  perspective: 500px;
+}
+
+.Card-last {
+  font-size: 4.4rem;
+  background-color: var(--secondary);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -76,7 +93,7 @@ body {
   border-radius: 10px;
   padding: 2rem 4rem;
   cursor: pointer;
-  transition: all 0.2s;
+  /* transition: all 0.2s; */
   z-index: 9999;
   position: absolute;
   bottom: 2%;
@@ -84,7 +101,11 @@ body {
   transform: translate(-50%, 0);
 }
 .move:hover {
-  transform: translate(-50%, -2px);
+  clip-path: path(
+    "M12 4.419c-2.826-5.695-11.999-4.064-11.999 3.27 0 7.27 9.903 10.938 11.999 15.311 2.096-4.373 12-8.041 12-15.311 0-7.327-9.17-8.972-12-3.27z"
+  );
+  /* transform:  */
+  transform: translate(150%, 200%) scale(5);
   color: var(--accent-5);
   /* border: 2px solid var(--accent-2); */
 }
@@ -123,6 +144,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+  padding: 2.4rem;
 }
 .card-front {
   z-index: 1;

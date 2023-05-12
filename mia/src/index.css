@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: none;
 }
 
 code {
@@ -13,5 +14,10 @@ code {
 }
 
 html {
+  overflow: none;
   font-size: 62.5%;
+}
+
+* {
+  font-family: "Parisienne", cursive;
 }
