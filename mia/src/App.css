@@ -1,0 +1,149 @@
+.App {
+  text-align: center;
+  /* background-colsor: var(--secondary); */
+  background: transpaent;
+  /* padding: 6.4rem; */
+  width: 30rem;
+  height: 50rem;
+  position: relative;
+  overflow: hidden;
+  /* padding: 4.8rem; */
+}
+body {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(at 80% 80%, #d21312 25.4%, #0000 26%),
+    radial-gradient(at 20% 80%, #d21312 25.4%, #0000 26%),
+    conic-gradient(from -45deg at 50% 41%, #d21312 90deg, #bd1110 0) 16px 0;
+  background-size: 32px 32px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:root {
+  --primary: #d21312;
+  --secondary: #ed2b2a;
+  --tertiary: #f15a59;
+  --text: #f79c9b;
+  --accent: #070a52;
+  --accent-1: #202363;
+  --accent-2: #393b75;
+  --accent-6: #9c9dba;
+  --accent-5: #8385a9;
+}
+
+.Card {
+  /* padding: 2rem; */
+  background-color: var(--secondary);
+  font-size: 2.8rem;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s;
+  perspective: 500px;
+}
+.title {
+  color: var(--accent);
+  font-size: 6rem;
+}
+
+.desc {
+  color: var(--text);
+}
+.move {
+  background: transparent;
+  border: none;
+  font-size: 4.8rem;
+  color: var(--accent-6);
+  /* border: 2px solid var(--accent); */
+  background-color: var(--accent);
+  border-radius: 10px;
+  padding: 2rem 4rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 9999;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.move:hover {
+  transform: translate(-50%, -2px);
+  color: var(--accent-5);
+  /* border: 2px solid var(--accent-2); */
+}
+
+.button {
+  position: absolute;
+  bottom: 2%;
+  padding: 4.2rem;
+  font-size: 3.2rem;
+  border: none;
+  background-color: var(--primary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.si {
+  /* background-color: var(--primary); */
+  color: var(--text);
+  left: 5%;
+}
+.no {
+  right: 5%;
+  color: var(--secondary);
+}
+
+.si:hover {
+  background-color: var(--text);
+  color: var(--primary);
+}
+
+.no:hover {
+  opacity: 0.1;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.card-front {
+  z-index: 1;
+  backface-visibility: hidden;
+}
+.card-back {
+  z-index: 0;
+}
+
+.flipped .card-front,
+.flipped .card-back {
+  transition: all 1s;
+  transform: rotateY(-180deg);
+}
+
+.card-front {
+  background-color: var(--secondary);
+}
+.card-back {
+  background-position: center;
+  background-size: cover;
+  background-color: black;
+  background-image: url("roses.jpg");
+}
